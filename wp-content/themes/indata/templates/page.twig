@@ -1,0 +1,113 @@
+{% extends "base.twig" %}
+
+
+{% block content %}
+
+ <!-- page-title -->
+        <div class="ttm-page-title-row">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12"> 
+                        <div class="title-box text-center">
+                            <div class="page-title-heading">
+                                <h1 class="title"> {{posts.name}}</h1>
+                            </div><!-- /.page-title-captions -->
+                            <div class="breadcrumb-wrapper">
+                                <span>
+                                    <a title="Homepage" href="{{site.url}}"><i class="ti ti-home"></i>&nbsp;&nbsp;Home</a>
+                                </span>
+                                <span class="ttm-bread-sep">&nbsp; : : &nbsp;</span>
+                                <span>{{posts.name}}</span>
+                            </div>  
+                        </div>
+                    </div><!-- /.col-md-12 -->  
+                </div><!-- /.row -->  
+            </div><!-- /.container -->                      
+        </div><!-- page-title end-->
+
+        <!--site-main start-->
+        <div class="site-main">
+        <!-- sidebar -->
+        <div class="sidebar ttm-sidebar ttm-bgcolor-white clearfix">
+            <div class="container">
+                <!-- row -->
+                <div class="row">
+                    <div class="col-lg-9 content-area order-lg-2">
+                        <!-- ttm-service-single-content-are -->
+                        <!-- ttm-service-single-content-are -->
+                        <div class="ttm-service-single-content-area">
+                            <div class="ttm_single_image-wrapper mb-35">
+                                <img class="img-fluid" src="{{site.theme.link}}/assets/images/single-img-twelve.jpg" alt="single-img-twelve">
+                            </div>
+                            <div class="ttm-service-description">
+                                <h3>{{posts.name}}</h3>
+                                <p class="mb-35">{{posts.get_content}}</p>
+                                
+                                <!-- acadion -->
+                               {% if ksfeat %}
+                               <h3 class="mt-50">Analyzing Services</h3>
+                               {% endif %}
+                                <div class="accordion style2 mt-20 mt-35">
+                                    <!-- toggle -->
+                                    {% for key in ksfeat %}
+                                    <div class="toggle">
+                                        <div class="toggle-title">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" >{{key.title}}</a>
+                                        </div>
+                                        <div class="toggle-content">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <p class="mb-0 t-para">{{key.description}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}<!-- toggle end -->
+                                </div><!-- acadion end-->
+                            </div>
+                        </div>
+                        <!-- ttm-service-single-content-are end -->
+                    </div>
+                    <div class="col-lg-3 widget-area">
+                        <aside class="widget widget-nav-menu">
+                            <ul class="widget-menu">
+                                {% for pa in pages %}
+                                <li class="{% if pa.post_name == last_key %} active {% endif %}"><a href="{{pa.post_name}}">{{pa.post_title}}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </aside>
+                        <aside class="widget widget-text">
+                            <h3 class="widget-title">About Us</h3>
+                            <div class="ttm-author-widget">
+                                <div class="author-widget_img">
+                                    <img class="author-img img-fluid" src="{{site.theme.link}}/assets/images/author-img.jpg" alt="author image">
+                                </div>
+                                <h4 class="author-name">Altech-author</h4>
+                                <p class="author-widget_text">{{add_info.about_us }}</p>
+                            </div>
+                        </aside>
+                        <aside class="widget widget_media_image">
+                            <div class="banner-img-box ttm-textcolor-white text-left">
+                                <div class="featured-content featured-content-banner">
+                                    <i class="flaticon flaticon-call"></i>
+                                    <div class="featured-title ttm-box-title">
+                                        <h5>How Can We Help?</h5>
+                                    </div>
+                                    <div class="featured-desc">
+                                        <p>If you need any help, please<br> feel free to contact us.</p>
+                                    </div>
+                                    <ul>
+                                        <li><i class="fa fa-phone"></i>{{add_info.phone_no}}</li>
+                                        <li><i class="fa fa-envelope-o"></i><a href="mailto:{{add_info.email}}">{{add_info.email}}</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                </div><!-- row end -->
+            </div>
+        </div>
+        <!-- sidebar end -->
+    </div><!--site-main end-->
+
+{% endblock %}

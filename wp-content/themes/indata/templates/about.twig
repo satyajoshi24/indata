@@ -1,0 +1,209 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    
+
+
+<!-- page-title -->
+        <div class="ttm-page-title-row">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12"> 
+                        <div class="title-box text-center">
+                            <div class="page-title-heading">
+                                <h1 class="title">About Us</h1>
+                            </div><!-- /.page-title-captions -->
+                            <div class="breadcrumb-wrapper">
+                                <span>
+                                    <a title="Homepage" href="{{site.url}}"><i class="ti ti-home"></i>&nbsp;&nbsp;Home</a>
+                                </span>
+                                <span class="ttm-bread-sep">&nbsp; : : &nbsp;</span>
+                                <span>{{posts.name}}</span>
+                            </div>  
+                        </div>
+                    </div><!-- /.col-md-12 -->  
+                </div><!-- /.row -->  
+            </div><!-- /.container -->                      
+        </div><!-- page-title end-->
+
+        <!--site-main start-->
+        <div class="site-main">
+
+           <!-- aboutus-section -->
+            <section class="ttm-row aboutus-section-style3 clearfix">
+                <div class="container">
+                    <div class="row"><!-- row -->
+                        <div class="col-lg-6">
+                            <div class="position-relative">
+                                <!-- ttm_single_image-wrapper -->
+                                <div class="ttm_single_image-wrapper text-sm-center mr-35 res-991-m-0">
+                                    <img class="img-fluid" src="{{TimberImage(posts.thumbnail).src}}" title="single-img-nine" alt="single-img-nine">
+                                </div><!-- ttm_single_image-wrapper end -->
+                                {# <div class="ttm-highlight-fid-style-2">
+                                    <!--ttm-fid-->
+                                    <div class="ttm-fid inside without-icon">
+                                        <div class="ttm-fid-contents">
+                                            <h4 class="ttm-fid-inner">
+                                                <span   data-appear-animation = "animateDigits"
+                                                data-from             = "0"
+                                                data-to               = "135"
+                                                data-interval         = "5"
+                                                data-before           = ""
+                                                data-before-style     = "sup"
+                                                data-after            = "+"
+                                                data-after-style      = "sub"
+                                            >135</span><span class="ml-5">+</span>
+                                            </h4>
+                                            <h3 class="ttm-fid-title">Successully Projects </h3>
+                                        </div>
+                                    </div><!-- ttm-fid end-->
+                                </div> #}
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="res-991-mt-30">
+                                <!-- section title -->
+                                <div class="section-title with-desc clearfix">
+                                    <div class="title-header">
+                                        <h5>About us</h5>
+                                        <h2 class="title">We are here to IT Solution with 20 years of <span>experience</span></h2>
+                                    </div>
+                                    <div class="title-desc">
+                                        <p>{{posts.get_content}}</p>
+                                    </div>
+                                </div><!-- section title end -->
+                                <!-- row -->
+                                
+                                <div class="row mt-15">
+                                    <div class="col-12">
+                                        <!-- featured-icon-box -->
+                                        {% for feat in kfeat %}
+                                        <div class="featured-icon-box style3 left-icon icon-align-top">
+                                            <div class="featured-icon"><!-- featured-icon -->
+                                                <div class="ttm-icon ttm-icon_element-color-skincolor ttm-icon_element-size-lg">
+                                                    <i class="flaticon flaticon-tourism"></i>
+                                                </div>
+                                            </div>
+                                            <div class="featured-content">
+                                                <div class="featured-title"><!-- featured title -->
+                                                    <h5>{{feat.title}}</h5>
+                                                </div>
+                                                <div class="featured-desc"><!-- featured desc -->
+                                                    <p>{{feat.key_feature}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                    </div>
+                                </div>
+                                <!-- separator -->
+                                <div class="separator">
+                                    <div class="sep-line mt-25 mb-10"></div>
+                                </div>
+                                <!-- separator -->
+                                
+                        </div>
+                    </div>
+                    <!-- row end -->
+                </div>
+            </section>
+            <!-- aboutus-section end -->
+
+            <!-- aboutus-section -->
+           {#  <section class="ttm-row aboutus-section clearfix">
+                <div class="container">
+                    <div class="row"><!-- row -->
+                        <div class="col-lg-6">
+                            <!-- section title -->
+                            <div class="section-title with-desc clearfix">
+                                <div class="title-header">
+                                    <h5>About us</h5>
+                                    <h2 class="title">We are here to IT Solution with 20 years of <span>experience</span></h2>
+                                </div>
+                                <div class="title-desc">
+                                    <p>{{posts.get_content}}</P>
+                                </div>
+                            </div><!-- section title end -->
+                            <!-- row -->
+                            <div class="row no-gutters mt-35 mb-25">
+                                {% for key in list %}
+                                <div class="col-md-6 col-lg-6 col-sm-6">
+                                    <ul class="ttm-list ttm-list-style-icon">
+                                        {% for feat in key %}
+                                        <li class="list-style"><i class="fa fa-check-square-o ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">{{feat.key_features}} </span></li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            {% endfor %}
+                            </div><!-- row END-->
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="position-relative res-991-mt-30">
+                                <!-- ttm_single_image-wrapper -->
+                                <div class="ttm_single_image-wrapper text-sm-center">
+                                    <img class="img-fluid" src="{{TimberImage(posts.thumbnail).src}}" title="single-img-seven" alt="single-img-seven">
+                                </div><!-- ttm_single_image-wrapper end -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- row end -->
+                </div>
+            </section> #}
+
+            <section class="ttm-row team-section clearfix">
+                <div class="container">
+                    <div class="row"><!-- row -->
+                        <div class="col-lg-9 col-xl-10 col-md-9">
+                            <!-- section-title -->
+                            <div class="section-title style2 clearfix">
+                                <div class="title-header">
+                                    <h5>About us</h5>
+                                    <h2 class="title">Meet our <span>Leadership</span></h2>
+                                </div>
+                                {# <div class="title-desc">The positive distinction within the World Inspiring of Success and Connections of People and Organizations.</div> #}
+                            </div><!-- section-title end -->
+                        </div>
+                        {# <div class="col-lg-3 col-xl-2 col-md-3">
+                            <div class="text-md-right">
+                                <a class="ttm-btn ttm-btn-size-md ttm-btn-style-border ttm-btn-color-darkgrey mb-40" href="#" title=""> Read More </a>
+                            </div>
+                        </div> #}
+                    </div>
+                    <!-- row end -->
+                    <!-- row -->
+                    <div class="row">
+                        <div class="team-slide owl-carousel" data-item="4" data-nav="false" data-dots="false" data-auto="false">
+                            <!-- featured-imagebox-team -->
+                            {% for team in ldship %}
+                            <div class="featured-imagebox featured-imagebox-team style2">
+                                <div class="featured-thumbnail"><!-- featured-thumbnail -->
+                                    <img class="img-fluid" src="{{TimberImage(team.image).src}}" alt="image">
+                                    <div class="ttm-social-links-wrapper">
+                                        <ul class="social-icons list-inline"><!-- social-icons -->
+                                            <li class="social-facebook"><a href="{{team.facebook_link}}"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                           {#  <li class="social-twitter"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li> #}
+                                            <li class="social-linkedin"><a href="{{team.linkedin_link}}"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                           {#  <li class="social-googleplus"><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li> #}
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="ttm-box-view-overlay"> 
+                                    <div class="featured-content box-shadow">
+                                        <div class="featured-title"><!-- featured-title -->
+                                            <h5><a>{{team.name}}</a></h5>
+                                        </div>
+                                        <p class="category">{{team.designation}}</p><!-- category -->
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}<!-- featured-imagebox-team end-->
+                        </div>
+                    </div><!-- row end-->
+                </div>
+            </section>
+            <!-- aboutus-section end -->
+
+        </div><!--site-main end-->
+
+
+    {% endblock %}

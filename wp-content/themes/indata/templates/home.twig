@@ -1,0 +1,228 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+
+ <!-- START homeclassicmain REVOLUTION SLIDER 6.0.1 -->
+        <rs-module-wrap id="rev_slider_1_1_wrapper" data-source="gallery">
+            <rs-module id="rev_slider_1_1" style="" data-version="6.0.1" class="rev_slider_1_1_height">
+                <!-- rs-slides -->    
+               
+                <rs-slides>
+                    <!-- rs-slide -->
+                
+                    {% for hs in hslider %}
+
+                    <rs-slide data-key="rs-1" data-title="Slide" data-thumb="{{TimberImage(hs.image).src}}" data-anim="  ei:d;eo:d;s:1000;r:0;t:fade;sl:0;">
+                        <img src="{{TimberImage(hs.image).src}}" title="home-mainslider-bg001" width="1920" height="850" class="rev-slidebg" data-no-retina>
+
+                       {#  <rs-layer
+                            id="slider-1-slide-1-layer-0"
+                            class="ttm-bgcolor-skincolor" 
+                            data-type="shape"
+                            data-rsp_ch="on"
+                            data-xy="xo:54px,54px,-100px,-96px;yo:327px,197px,105px,64px;" 
+                            data-text="w:normal;s:20,20,12,7;l:0,0,15,9;"
+                            data-dim="w:55px,55px,34px,20px;h:4px,4px,2px,1px;"
+                            data-vbility="t,t,f,f"
+                            data-frame_0="x:50,50,31,19;"
+                            data-frame_1="e:Power0.easeIn;st:190;sR:190;"
+                            data-frame_999="o:0;st:w;sR:8510;"
+                            > 
+                        </rs-layer> #}
+                        
+                        <rs-layer
+                            id="slider-1-slide-1-layer-2" 
+                            data-type="text"
+                            data-color="#263045"
+                            data-rsp_ch=="on"
+                            data-xy="x:l,l,l,c;xo:50px,50px,40px,0;yo:342px,212px,111px,84px;"
+                            data-text="w:normal;s:62,62,50,37;l:70,70,50,50;fw:600;"
+                            data-frame_0="x:-50,-50,-31,-19;"
+                            data-frame_1="e:Power0.easeIn;st:250;sp:800;sR:250;"
+                            data-frame_999="o:0;st:w;sR:7950;"
+                            >{# {{hs.title}} #}
+                        </rs-layer>
+                        
+                        <rs-layer
+                            id="slider-1-slide-1-layer-5" 
+                            data-type="text"
+                            data-color="#3b404c"
+                            data-rsp_ch="on"
+                            data-xy="xo:50px,50px,40px,-444px;yo:488px,358px,220px,113px;"
+                            data-text="s:16,16,14,8;l:27,27,23,14;"
+                            data-vbility="t,t,t,f"
+                            data-frame_0="x:-50,-50,-31,-19;"
+                            data-frame_1="e:Power0.easeIn;st:860;sp:500;sR:860;"
+                            data-frame_999="o:0;st:w;sR:7640;"
+                            >{# {{hs.description}}  #}
+                        </rs-layer>
+                        <a 
+                            id="slider-1-slide-1-layer-6" 
+                            class="rs-layer"
+                            href="#" target="_self" rel="nofollow"
+                            data-type="text"
+                            data-color="#263045"
+                            data-rsp_ch="on"
+                            data-xy="xo:308px,308px,222px,-134px;yo:587px,457px,304px,192px;"
+                            data-text="s:23,23,15,9;l:25,25,15,9;fw:800;"
+                            data-vbility="t,t,t,f"
+                            data-frame_0="y:100%;"
+                            data-frame_1="st:1050;sp:500;sR:1050;"
+                            data-frame_999="o:0;st:w;sR:7450;"
+                            data-frame_hover="c:#2d4a8a;"
+                            >  
+                        </a>
+                    </rs-slide>
+
+                    {% endfor %}
+                    
+                </rs-slides>
+                    <!-- rs-slide -->
+            
+            </rs-module><!-- rs-module -->
+        </rs-module-wrap>
+        <!-- END REVOLUTION SLIDER -->
+       
+       <div class="sg-popup-id-313">
+        {{ function('do_shortcode', '[sg_popup id=313]') }}
+       </div>
+
+ <!--site-main start-->
+        <div class="site-main">
+
+           <!-- history-section -->
+            <section class="ttm-row history-section bg-img3 ttm-bgcolor-grey ttm-bg ttm-bgimage-yes clearfix">
+                <div class="ttm-row-wrapper-bg-layer ttm-bg-layer"></div>
+                <div class="container">
+                    <div class="row"><!-- row -->
+                        <div class="col-lg-8 offset-lg-2">
+                            <!-- section title -->
+                            <div class="section-title with-desc text-center clearfix">
+                                <div class="title-header">
+                                    <h5>Our Services</h5>
+                                    <h2 class="title">We run all kinds of services in form of <span>Information & Technologies</span></h2>
+                                </div>
+                            </div><!-- section title end -->
+                        </div>
+                    </div>
+                    <!-- row end -->
+                    <!-- row -->
+                    <div class="row">
+                        <div class="history-slide owl-carousel" data-item="4" data-nav="false" data-dots="false" data-auto="true">
+                            {% for serv in service %}
+                            <div class="ttm-history-box-wrapper"><!-- ttm-history-box-wrapper  --> 
+                                <div class="ttm-history-box-icon-wrapper"><!-- ttm-history-box-icon-wrapper  --> 
+                                    <!--  featured-icon-box --> 
+                                    <div class="featured-icon-box">
+                                        <div class="featured-icon"><!--  featured-icon -->
+                                            <div class="ttm-icon ttm-icon_element-bgcolor-white ttm-icon_element-size-md">
+                                                <i class="flaticon flaticon-business-and-finance"></i><!--  ttm-icon --> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ttm-history-box-border"></div><!-- ttm-history-box-border  --> 
+                                <div class="ttm-history-box-details">
+                                    <div class="ttm-historybox-title"><h5>{{serv.post_title}}</h5></div><!-- historybox-title  --> 
+                                    <div class="ttm-historybox-description"><!-- description  --> 
+                                       {{serv.post_content | truncate(25) }}
+                                    </div>
+                                    <a class="ttm-btn ttm-btn-size-sm ttm-btn-color-skincolor btn-inline ttm-icon-btn-right mt-20" href="{{serv.post_name}}">Read More <i class="ti ti-angle-double-right"></i></a>
+                                </div>
+                            </div><!-- ttm-history-box-wrapper  END-->
+                        {% endfor %}
+                        </div>
+                    </div><!-- row end-->
+                </div>
+            </section>
+            <!-- history-section end -->
+
+{# <pre>
+   <code>{{ hslider | print_r }}</code>
+</pre>
+ #}
+            <!-- our-partner-section -->
+            <div class="ttm-row our-partner-section ttm-bgcolor-skincolor mt_90 res-991-mt-0 clearfix">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- ttm-client -->
+                            <div class="clients-slide owl-carousel owl-theme owl-loaded" data-item="5" data-nav="false" data-dots="false" data-auto="false">
+                                {% for client in clt %}
+                                <div class="client-box ttm-box-view-boxed-logo">
+                                    <div class="client">
+                                        <div class="ttm-client-logo-tooltip" data-tooltip="{{client.name}}">
+                                            <a href="{{client.website_link}}"><img class="img-fluid" src="{{TimberImage(client.image).src}}" alt="image"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            </div><!-- ttm-client end -->      
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <!-- our-partner-section END-->
+
+            <!-- fid-section --> 
+            <!-- aboutus-section -->
+            <section class="ttm-row aboutus-section clearfix">
+                <div class="container">
+                    <div class="row"><!-- row -->
+                        <div class="col-lg-6">
+                            <!-- section title -->
+                            {% for item in wcu %}
+                            <div class="section-title with-desc clearfix">
+                                <div class="title-header">
+                                    <h5>{{item.post_title}}</h5>
+                                    <h2 class="title">{{exce}}</h2>
+                                </div>
+                                <div class="title-desc">
+                                    <p>{{item.post_content}}</P>
+                                </div>
+                            </div>
+                        {% endfor %}<!-- section title end -->
+                            <!-- row -->
+                            <div class="row no-gutters mt-35">
+                                {% for feat in wcu_feat %}
+                                <div class="col-md-6 col-lg-6 col-sm-6">
+                                    <ul class="ttm-list ttm-list-style-icon">
+                                        {% for item in feat %}
+                                        <li><i class="fa fa-circle-o ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">{{item.feature}} </span></li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            {% endfor %}
+                            </div><!-- row END-->
+                            <!-- separator -->
+                            <div class="separator">
+                                <div class="sep-line mt-25 mb-30"></div>
+                            </div>
+                            <!-- separator -->
+                            <div class="about-text-box fs-16">
+                                <span>Call to ask <a href="{{site.url}}/contact-us" class="fw-500"><u>any question</u></a></span>
+                                <strong class="fs-18">: {{add_info.phone_no}}</strong>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="position-relative res-991-mt-30">
+                                <!-- ttm_single_image-wrapper -->
+                                 <div class="ttm_single_image-wrapper">
+                                    <img class="img-fluid lazyload" src="{{feat_img}}" title="{{item.title}}" alt="single-img-one">
+                                </div><!-- ttm_single_image-wrapper end -->
+                               
+                               
+                            </div>
+                        </div>
+                    </div>
+                    <!-- row end -->
+                    <!-- row -->
+                    <div class="row">
+                        
+                    </div><!-- row end-->
+                </div>
+            </section>
+
+        </div><!--site-main end-->
+
+    {% endblock %}

@@ -1,0 +1,80 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+	
+         
+	{# {% for p in posts %} #}
+
+<!-- page-title -->
+        <div class="ttm-page-title-row">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12"> 
+                        <div class="title-box text-center">
+                            <div class="page-title-heading">
+                                <h1 class="title"> Our Services</h1>
+                            </div><!-- /.page-title-captions -->
+                            <div class="breadcrumb-wrapper">
+                                <span>
+                                    <a title="Homepage" href="{{site.url}}"><i class="ti ti-home"></i>&nbsp;&nbsp;Home</a>
+                                </span>
+                                <span class="ttm-bread-sep">&nbsp; : : &nbsp;</span>
+                                <span> {{posts.name}}</span>
+                            </div>  
+                        </div>
+                    </div><!-- /.col-md-12 -->  
+                </div><!-- /.row -->  
+            </div><!-- /.container -->                      
+        </div><!-- page-title end-->
+
+        <!--site-main start-->
+        <div class="site-main">
+
+            <!-- services-slide-section -->
+            <section class="ttm-row grid-section clearfix">
+                <div class="container">
+                    <div class="row"><!-- row -->
+                        <div class="col-lg-8 offset-lg-2">
+                            <!-- section-title -->
+                            <div class="section-title with-desc text-center clearfix">
+                                <div class="title-header">
+                                    <h5>{{posts.title_header}}</h5>
+                                    <h2 class="title">{{posts.header_content}}</h2>
+                                </div>
+                            </div><!-- section-title end -->
+                        </div>
+                    </div>
+                    <!-- row end -->
+                    <!-- row -->
+                    <div class="row">
+                       {% for pa in pages %}
+                        <div class="col-md-6 col-lg-4">
+                            <!-- featured-imagebox-services -->
+                            <div class="featured-imagebox featured-imagebox-services style1 mb-30">
+                                <div class="featured-thumbnail"><!-- featured-thumbnail -->
+                                    <img class="img-fluid" src="{{TimberImage(pa.thumbnail).src}}" alt="image">
+                                </div> 
+                                <div class="featured-content box-shadow">
+                                    <div class="featured-title"><!-- featured-title -->
+                                        <h5><a href="{{pa.post_name}}">{{pa.post_title}}y</a></h5>
+                                    </div>
+                                    <div class="featured-desc"><!-- featured-title -->
+                                        <p>{{pa.short_description}}</p>
+                                    </div>
+                                    <a class="ttm-btn ttm-btn-size-sm ttm-btn-color-skincolor btn-inline ttm-icon-btn-right mt-10" href="{{pa.post_name}}">Read More <i class="ti ti-angle-double-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                      {% endfor %}
+                     
+                    </div>
+                    <!-- row end-->
+                </div>
+            </section>
+            <!-- services-slide-section end -->
+
+        </div><!--site-main end-->
+	{# {% endfor %} #}
+
+
+{% endblock %}
