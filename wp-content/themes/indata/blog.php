@@ -20,8 +20,24 @@ if ( ! class_exists( 'Timber' ) ) {
 	return;
 }
 $context = Timber::get_context();
-$post = Timber::get_posts();
+$post = new TimberPost();
 $context['posts'] = $post;
+/*$args = array(
+	'post_type'=> 'post',
+	'orderby'    => 'ID',
+	'post_status' => 'publish',
+	'order'    => 'DESC',
+	'posts_per_page' => -1 
+	);*/
 
+$blogs = Timber::get_posts(array(
+	'post_type'=>'post',
+	'orderby'    => 'ID',
+	'order'    => 'DESC',
+	'posts_per_page' => -1
+));
 
+$context['blogs'] = $blogs;
+
+//pr($blogs,1);
 Timber::render(array('blog.twig', '404.twig'), $context );

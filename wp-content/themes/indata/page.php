@@ -23,6 +23,9 @@ $context['posts'] = $timber_post;
 		//pr($last_key,1);
 		$context['last_key'] = $last_key;
 
+	/* For Child pages link for side-nav */
+		$last_key_link = $exp[count($exp)-3];
+//pr($last_key_link,1);
 	/* Get the parent post id  */
 	$parent = wp_get_post_parent_id($post);
 	//pr($parent,1);
@@ -42,7 +45,9 @@ $context['posts'] = $timber_post;
    		$context['pages'] = $children;
 
 	   }
-//pr($context['pages'],1);
+
+//pr($context['link'],1);
+
 
   /* Key Services Repeater Field for Services child pages */
   $key_services = get_field('key_services_toggle');

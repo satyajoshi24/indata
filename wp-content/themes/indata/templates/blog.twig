@@ -12,14 +12,14 @@
                     <div class="col-md-12"> 
                         <div class="title-box text-center">
                             <div class="page-title-heading">
-                                <h1 class="title">Blog Left Image</h1>
+                                <h1 class="title">Blogs</h1>
                             </div><!-- /.page-title-captions -->
                             <div class="breadcrumb-wrapper">
                                 <span>
-                                    <a title="Homepage" href="index.html"><i class="ti ti-home"></i>&nbsp;&nbsp;Home</a>
+                                    <a title="Homepage" href="{{site.url}}"><i class="ti ti-home"></i>&nbsp;&nbsp;Home</a>
                                 </span>
                                 <span class="ttm-bread-sep">&nbsp; : : &nbsp;</span>
-                                <span>blog-left-image</span>
+                                <span>{{posts.name}}</span>
                             </div>  
                         </div>
                     </div><!-- /.col-md-12 -->  
@@ -29,162 +29,39 @@
 
         <!--site-main start-->
         <div class="site-main">
-
             <!-- blog-section end -->
             <section class="ttm-row grid-section ttm-bgcolor-grey clearfix">
                 <div class="container">
                     <!-- row -->
                     <div class="row">
-                        <div class="col-lg-6 col-sm-12 col-md-6 col-xs-12">
-                            <!-- featured-imagebox-post -->
-                            <div class="row no-gutters featured-imagebox featured-imagebox-post ttm-box-view-left-image box-shadow">
-                                <div class="col-lg-5 col-md-12 col-sm-6 ttm-featured-img-left">
-                                    <div class="featured-thumbnail"> 
-                                        <img class="img-fluid" src="{{site.theme.link}}/assets/images/blog/20.jpg" alt="blog"> 
-                                    </div> 
+                        {% for bl in blogs %}
+                            
+                                <div class="col-lg-6 col-sm-12 col-md-6 col-xs-12">
+                                    <!-- featured-imagebox-post -->
+                                    <div class="row no-gutters featured-imagebox featured-imagebox-post ttm-box-view-left-image box-shadow">
+                                        <div class="col-lg-5 col-md-12 col-sm-6 ttm-featured-img-left">
+                                            <div class="featured-thumbnail"> 
+                                                <img class="img-fluid featured-image" src="{{TimberImage(bl.featured_image).src}}" alt="blog"> 
+                                            </div> 
+                                        </div>
+                                        <div class="col-lg-7 col-md-12 col-sm-6 featured-content">
+                                            {# <span class="category">
+                                                <a href="portfolio-category.html">Business</a>
+                                                <a href="portfolio-category.html">Consulting</a>
+                                            </span> #}
+                                            <div class="post-title featured-title">
+                                                <h5><a href="{{bl.post_name}}">{{bl.post_title}}</a></h5>
+                                            </div>
+                                            <div class="featured-desc ttm-box-desc">
+                                                <p>{{bl.content | truncate(20)}}</p>
+                                            </div>
+                                            <div class="post-meta">
+                                                <span class="ttm-meta-line"><a href="{{bl.link}}">{{post_date}}</a></span>
+                                            </div>
+                                        </div>
+                                    </div><!-- featured-imagebox-post end-->
                                 </div>
-                                <div class="col-lg-7 col-md-12 col-sm-6 featured-content">
-                                    <span class="category">
-                                        <a href="portfolio-category.html">Business</a>
-                                        <a href="portfolio-category.html">Consulting</a>
-                                    </span>
-                                    <div class="post-title featured-title">
-                                        <h5><a href="single-blog.html">Successful Growth In Business 2018</a></h5>
-                                    </div>
-                                    <div class="featured-desc ttm-box-desc">
-                                        <p>Mauris id enim id purus ornare tincidunt. Aenean vel consequat risus.Proin viverra nisi at nisl impe...</p>
-                                    </div>
-                                    <div class="post-meta">
-                                        <span class="ttm-meta-line"><a href="single-blog.html">January 16, 2019</a></span>
-                                    </div>
-                                </div>
-                            </div><!-- featured-imagebox-post end-->
-                        </div>
-                        <div class="col-lg-6 col-sm-12 col-md-6 col-xs-12">
-                            <!-- featured-imagebox-post -->
-                            <div class="row no-gutters featured-imagebox featured-imagebox-post ttm-box-view-left-image box-shadow">
-                                <div class="col-lg-5 col-md-12 col-sm-6 ttm-featured-img-left">
-                                    <div class="featured-thumbnail"> 
-                                        <img class="img-fluid" src="{{site.theme.link}}/assets/images/blog/21.jpg" alt="blog"> 
-                                    </div> 
-                                </div>
-                                <div class="col-lg-7 col-md-12 col-sm-6 featured-content">
-                                    <span class="category">
-                                        <a href="portfolio-category.html">Security</a>
-                                        <a href="portfolio-category.html">UI/UX Design</a>
-                                    </span>
-                                    <div class="post-title featured-title">
-                                        <h5><a href="single-blog.html">You Must Try 20 Secret Of Digital Transform</a></h5>
-                                    </div>
-                                    <div class="featured-desc ttm-box-desc">
-                                        <p>Mauris id enim id purus ornare tincidunt. Aenean vel consequat risus.Proin viverra nisi at nisl impe...</p>
-                                    </div>
-                                    <div class="post-meta">
-                                        <span class="ttm-meta-line"><a href="single-blog.html">January 12, 2019</a></span>
-                                    </div>
-                                </div>
-                            </div><!-- featured-imagebox-post end-->
-                        </div>
-                        <div class="col-lg-6 col-sm-12 col-md-6 col-xs-12">
-                            <!-- featured-imagebox-post -->
-                            <div class="row no-gutters featured-imagebox featured-imagebox-post ttm-box-view-left-image box-shadow">
-                                <div class="col-lg-5 col-md-12 col-sm-6 ttm-featured-img-left">
-                                    <div class="featured-thumbnail"> 
-                                        <img class="img-fluid" src="{{site.theme.link}}/assets/images/blog/22.jpg" alt="blog"> 
-                                    </div> 
-                                </div>
-                                <div class="col-lg-7 col-md-12 col-sm-6 featured-content">
-                                    <span class="category">
-                                        <a href="portfolio-category.html">Digital</a>
-                                        <a href="portfolio-category.html">Marketing</a>
-                                    </span>
-                                    <div class="post-title featured-title">
-                                        <h5><a href="single-blog.html">10 PHP Frameworks You Need To Use Anywhere</a></h5>
-                                    </div>
-                                    <div class="featured-desc ttm-box-desc">
-                                        <p>Mauris id enim id purus ornare tincidunt. Aenean vel consequat risus.Proin viverra nisi at nisl impe...</p>
-                                    </div>
-                                    <div class="post-meta">
-                                        <span class="ttm-meta-line"><a href="single-blog.html">March 10, 2019</a></span>
-                                    </div>
-                                </div>
-                            </div><!-- featured-imagebox-post end-->
-                        </div>
-                        <div class="col-lg-6 col-sm-12 col-md-6 col-xs-12">
-                            <!-- featured-imagebox-post -->
-                            <div class="row no-gutters featured-imagebox featured-imagebox-post ttm-box-view-left-image box-shadow">
-                                <div class="col-lg-5 col-md-12 col-sm-6 ttm-featured-img-left">
-                                    <div class="featured-thumbnail"> 
-                                        <img class="img-fluid" src="{{site.theme.link}}/assets/images/blog/23.jpg" alt="blog"> 
-                                    </div> 
-                                </div>
-                                <div class="col-lg-7 col-md-12 col-sm-6 featured-content">
-                                    <span class="category">
-                                        <a href="portfolio-category.html">Cyber Data</a>
-                                        <a href="portfolio-category.html">Digital</a>
-                                    </span>
-                                    <div class="post-title featured-title">
-                                        <h5><a href="single-blog.html">Digital Conference Of IT Tech Events in 2019</a></h5>
-                                    </div>
-                                    <div class="featured-desc ttm-box-desc">
-                                        <p>Mauris id enim id purus ornare tincidunt. Aenean vel consequat risus.Proin viverra nisi at nisl impe...</p>
-                                    </div>
-                                    <div class="post-meta">
-                                        <span class="ttm-meta-line"><a href="single-blog.html">May 22, 2019</a></span>
-                                    </div>
-                                </div>
-                            </div><!-- featured-imagebox-post end-->
-                        </div>
-                        <div class="col-lg-6 col-sm-12 col-md-6 col-xs-12">
-                            <!-- featured-imagebox-post -->
-                            <div class="row no-gutters featured-imagebox featured-imagebox-post ttm-box-view-left-image box-shadow">
-                                <div class="col-lg-5 col-md-12 col-sm-6 ttm-featured-img-left">
-                                    <div class="featured-thumbnail"> 
-                                        <img class="img-fluid" src="{{site.theme.link}}/assets/images/blog/24.jpg" alt="blog"> 
-                                    </div> 
-                                </div>
-                                <div class="col-lg-7 col-md-12 col-sm-6 featured-content">
-                                    <span class="category">
-                                        <a href="portfolio-category.html">Cyber Data</a>
-                                        <a href="portfolio-category.html">Design</a>
-                                    </span>
-                                    <div class="post-title featured-title">
-                                        <h5><a href="single-blog.html">Where And How To Watch Live Stream Today</a></h5>
-                                    </div>
-                                    <div class="featured-desc ttm-box-desc">
-                                        <p>Mauris id enim id purus ornare tincidunt. Aenean vel consequat risus.Proin viverra nisi at nisl impe...</p>
-                                    </div>
-                                    <div class="post-meta">
-                                        <span class="ttm-meta-line"><a href="single-blog.html">April 20, 2019</a></span>
-                                    </div>
-                                </div>
-                            </div><!-- featured-imagebox-post end-->
-                        </div>
-                        <div class="col-lg-6 col-sm-12 col-md-6 col-xs-12">
-                            <!-- featured-imagebox-post -->
-                            <div class="row no-gutters featured-imagebox featured-imagebox-post ttm-box-view-left-image box-shadow">
-                                <div class="col-lg-5 col-md-12 col-sm-6 ttm-featured-img-left">
-                                    <div class="featured-thumbnail"> 
-                                        <img class="img-fluid" src="{{site.theme.link}}/assets/images/blog/25.jpg" alt="blog"> 
-                                    </div> 
-                                </div>
-                                <div class="col-lg-7 col-md-12 col-sm-6 featured-content">
-                                    <span class="category">
-                                        <a href="portfolio-category.html">Business</a>
-                                        <a href="portfolio-category.html">Consulting</a>
-                                    </span>
-                                    <div class="post-title featured-title">
-                                        <h5><a href="single-blog.html">5 Easy Ways to Improve Your Web Security</a></h5>
-                                    </div>
-                                    <div class="featured-desc ttm-box-desc">
-                                        <p>Mauris id enim id purus ornare tincidunt. Aenean vel consequat risus.Proin viverra nisi at nisl impe...</p>
-                                    </div>
-                                    <div class="post-meta">
-                                        <span class="ttm-meta-line"><a href="single-blog.html">May 14, 2019</a></span>
-                                    </div>
-                                </div>
-                            </div><!-- featured-imagebox-post end-->
-                        </div>
+                       {% endfor %}
                     </div><!-- row end -->
                     <div class="row">
                         <div class="col-md-12 text-center">

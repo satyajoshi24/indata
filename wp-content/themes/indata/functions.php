@@ -75,7 +75,7 @@ class StarterSite extends Timber\Site {
 	 public static function setup()
 	    {
 	        add_theme_support('post-formats');
-	        add_theme_support('post-thumbnails');
+	        add_theme_support( 'post-thumbnails' );
 	        add_theme_support('menus');
 	        // add_theme_support('menus');
 	       /* register_nav_menus(array(
@@ -202,6 +202,8 @@ class StarterSite extends Timber\Site {
 
 
 	public function theme_supports() {
+		
+
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
 
@@ -218,7 +220,10 @@ class StarterSite extends Timber\Site {
 		 *
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
-		add_theme_support( 'post-thumbnails' );
+		// Add theme support for Featured Images
+			add_theme_support('post-thumbnails', array(
+			'post','page',
+			));
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -304,6 +309,9 @@ class StarterSite extends Timber\Site {
           Routes::map('services', function($params){
             Routes::load('services.php', $params, $query);
     });
+         /* Routes::map('blogs/:slug', function($params){
+          	Routes::map('blog-single.php', $params, $query);
+          });*/
 
         /* Routes::map('services/:slug', function($params){
             Routes::load('services-single.php', $params, $query);

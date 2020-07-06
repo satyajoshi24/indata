@@ -15,8 +15,14 @@ $context         = Timber::context();
 $timber_post     = Timber::query_post();
 $context['posts'] = $timber_post;
 
+$blogs = Timber::get_posts(array(
+	'post_type'=>'post',
+	'orderby'    => 'ID',
+	'order'    => 'DESC',
+	'posts_per_page' => 5
+));
 
-
+$context['blogs'] = $blogs;
 if ( post_password_required( $timber_post->ID ) ) {
 	Timber::render( 'single-password.twig', $context );
 } else {
