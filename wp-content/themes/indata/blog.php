@@ -21,6 +21,8 @@ if ( ! class_exists( 'Timber' ) ) {
 }
 $context = Timber::get_context();
 $post = new TimberPost();
+$context['pagin']	=	$post ? Timber::get_pagination() : null;
+//pr($context['pagin'],1);
 $context['posts'] = $post;
 /*$args = array(
 	'post_type'=> 'post',
@@ -36,6 +38,7 @@ $blogs = Timber::get_posts(array(
 	'order'    => 'DESC',
 	'posts_per_page' => -1
 ));
+
 
 $context['blogs'] = $blogs;
 

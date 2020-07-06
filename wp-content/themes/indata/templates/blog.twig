@@ -63,15 +63,82 @@
                                 </div>
                        {% endfor %}
                     </div><!-- row end -->
-                    <div class="row">
+                    
+                    {% if pagin.pagination.pages is not empty %}
+                        <nav class="pagination-block">
+                            <ul class="pagination">
+
+                                {# First #}
+                                {% if pagin.pagination.pages|first and pagin.pagination.pages|first.current != true %}
+                                    <li class="first btn">
+                                        <a href="{{ pagin.pagination.pages|first.link }}">First</a>
+                                    </li>
+                                {% else %}
+                                    <li class="first btn disabled">
+                                        <button disabled>First</button>
+                                    </li>
+                                {% endif %}
+
+                                {# Previous #}
+                                {% if pagin.pagination.prev %}
+                                    <li class="prev btn">
+                                        <a href="{{ pagin.pagination.prev.link }}">Previous</a>
+                                    </li>
+                                {% else %}
+                                    <li class="prev btn disabled">
+                                        <button disabled>Previous</button>
+                                    </li>
+                                {% endif %}
+
+                                {# Pages #}
+                                {% for page in pagin.pagination.pages %}
+                                    {% if page.link %}
+                                        <li>
+                                            <a href="{{ page.link }}" class="{{ page.class }}">{{ page.title }}</a>
+                                        </li>
+                                    {% else %}
+                                        <li class="current">
+                                            <span class="{{ page.class }}">{{ page.title }}</span>
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
+
+                                {# Next #}
+                                {% if pagin.pagination.next %}
+                                    <li class="next btn">
+                                        <a href="{{ pagin.pagination.next.link }}">Next</a>
+                                    </li>
+                                {% else %}
+                                    <li class="next btn disabled">
+                                        <button disabled>Next</button>
+                                    </li>
+                                {% endif %}
+
+                                {# Last #}
+                                {% if pagin.pagination.pages|last and pagin.pagination.pages|last.current != true %}
+                                    <li class="last btn">
+                                        <a href="{{ pagin.pagination.pages|last.link }}">Last</a>
+                                    </li>
+                                {% else %}
+                                    <li class="last btn disabled">
+                                        <button disabled>Last</button>
+                                    </li>
+                                {% endif %}
+
+                            </ul>
+                        </nav>
+                    {% endif %}
+
+                    {# <div class="row">
                         <div class="col-md-12 text-center">
+                         
                             <div class="ttm-pagination">
                                 <span class="page-numbers current">1</span>
                                 <a class="page-numbers" href="#">2</a>
                                 <a class="next page-numbers" href="#"><i class="ti ti-arrow-right"></i></a>
                             </div>
                         </div>
-                    </div>
+                    </div> #}
                 </div>
             </section>
             <!-- process-section end -->

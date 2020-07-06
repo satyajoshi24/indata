@@ -1,11 +1,12 @@
-{% if posts.pagination.pages is not empty %}
+
+{% if pagin.pagination.pages is not empty %}
     <nav class="pagination-block">
         <ul class="pagination">
 
             {# First #}
-            {% if posts.pagination.pages|first and posts.pagination.pages|first.current != true %}
+            {% if pagin.pagination.pages|first and pagin.pagination.pages|first.current != true %}
                 <li class="first btn">
-                    <a href="{{ posts.pagination.pages|first.link }}">First</a>
+                    <a href="{{ pagin.pagination.pages|first.link }}">First</a>
                 </li>
             {% else %}
                 <li class="first btn disabled">
@@ -14,9 +15,9 @@
             {% endif %}
 
             {# Previous #}
-            {% if posts.pagination.prev %}
+            {% if pagin.pagination.prev %}
                 <li class="prev btn">
-                    <a href="{{ posts.pagination.prev.link }}">Previous</a>
+                    <a href="{{ pagin.pagination.prev.link }}">Previous</a>
                 </li>
             {% else %}
                 <li class="prev btn disabled">
@@ -25,7 +26,7 @@
             {% endif %}
 
             {# Pages #}
-            {% for page in posts.pagination.pages %}
+            {% for page in pagin.pagination.pages %}
                 {% if page.link %}
                     <li>
                         <a href="{{ page.link }}" class="{{ page.class }}">{{ page.title }}</a>
@@ -38,9 +39,9 @@
             {% endfor %}
 
             {# Next #}
-            {% if posts.pagination.next %}
+            {% if pagin.pagination.next %}
                 <li class="next btn">
-                    <a href="{{ posts.pagination.next.link }}">Next</a>
+                    <a href="{{ pagin.pagination.next.link }}">Next</a>
                 </li>
             {% else %}
                 <li class="next btn disabled">
@@ -49,9 +50,9 @@
             {% endif %}
 
             {# Last #}
-            {% if posts.pagination.pages|last and posts.pagination.pages|last.current != true %}
+            {% if pagin.pagination.pages|last and pagin.pagination.pages|last.current != true %}
                 <li class="last btn">
-                    <a href="{{ posts.pagination.pages|last.link }}">Last</a>
+                    <a href="{{ pagin.pagination.pages|last.link }}">Last</a>
                 </li>
             {% else %}
                 <li class="last btn disabled">
